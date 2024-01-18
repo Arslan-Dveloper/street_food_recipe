@@ -1,25 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:sizer/sizer.dart';
-import 'package:street_food_recipe/Controller/Controller_File.dart';
 import 'package:street_food_recipe/Extension/Padding_Extension.dart';
 import 'package:street_food_recipe/Helpers/constant.dart';
 import 'package:street_food_recipe/MyCustomWidget/CustomWidget.dart';
-import 'package:street_food_recipe/Views/Module_No_1/Screens/Eidt_Profile.dart';
+import 'package:street_food_recipe/Views/Module_No_1/Screens/Notification_Screen.dart';
+import 'package:street_food_recipe/Views/Module_No_1/Screens/Search_Screen.dart';
 import 'package:street_food_recipe/Views/Module_No_1/Screens/Setting.dart';
-import 'package:street_food_recipe/Views/Module_No_1/Screens/Setting_Two.dart';
 
-class HomeScreen extends StatelessWidget {
-  List<Widget> _LayOutScreen = [
-    SettingTwo(),
-    Setting(),
-    EditProfile(),
-  ];
-
+class HomeLayout extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    MyFoodAppController controller = Get.put(MyFoodAppController());
     return Scaffold(
       drawer: Drawer(
         child: Column(
@@ -111,67 +102,39 @@ class HomeScreen extends StatelessWidget {
         ),
       ),
       body: CustomScrollView(
-        shrinkWrap: true,
-        physics: BouncingScrollPhysics(),
-        slivers: <Widget>[
+        slivers: [
           SliverAppBar(
             backgroundColor: MyFoodAppColor.appBarColor,
-            bottom: PreferredSize(
-              preferredSize: Size.fromHeight(200.sp),
-              child: Row(
+            expandedHeight: 220.sp,
+            flexibleSpace: SingleChildScrollView(
+              physics: BouncingScrollPhysics(),
+              child: Column(
                 children: [
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      MyContainer(
-                        image: 'assets/images/Ellipse 2.png',
-                        containerWidget: MyContainer(
-                          height: 80.sp,
-                          width: 80.sp,
-                          border: Border.all(
-                              color: MyFoodAppColor.whiteColor, width: 2),
-                          borderRadius: BorderRadius.circular(50.sp),
-                        ),
-                      ),
-                      MyText(
-                        text: 'Hello, Jhon',
-                        textColor: MyFoodAppColor.forgeTextColor,
-                        fontSize: 14.sp,
-                        fontWeightText: FontWeight.w600,
-                      ).onlyPadding(top: 10.sp),
-                      MyText(
-                        text: 'Make your own food,',
-                        textColor: MyFoodAppColor.whiteColor,
-                        fontSize: 18.sp,
-                        fontWeightText: FontWeight.w600,
-                      ).onlyPadding(top: 5.sp),
                       Row(
                         children: [
-                          MyText(
-                            text: 'stay at ',
-                            textColor: MyFoodAppColor.whiteColor,
-                            fontSize: 18.sp,
-                            fontWeightText: FontWeight.w600,
+                          Container(
+                            width: 80,
+                            height: 80,
+                            child: Image.asset('assets/images/Ellipse 2.png')
+                                .allPadding(all: 4.sp),
+                            decoration: BoxDecoration(
+                                border: Border.all(
+                                    color: MyFoodAppColor.greywColor),
+                                borderRadius: BorderRadius.circular(50.sp)),
                           ),
-                          MyText(
-                            text: 'Home ',
-                            textColor: MyFoodAppColor.yellowColor,
-                            fontSize: 18.sp,
-                            fontWeightText: FontWeight.w600,
+                          GestureDetector(
+                            onTap: (){
+                              Get.to(NotificationScreen());
+                            },
+                            child: Icon(
+                              Icons.notifications_active,
+                              color: MyFoodAppColor.whiteColor,
+                              size: 25.sp,
+                            ).onlyPadding(left: 150.sp),
                           ),
-                        ],
-                      ),
-                    ],
-                  ).onlyPadding(bottom: 50.sp, left: 40),
-                  Column(
-                    children: [
-                      Row(
-                        children: [
-                          Icon(
-                            Icons.alarm,
-                            color: MyFoodAppColor.whiteColor,
-                            size: 25.sp,
-                          ).onlyPadding(right: 10.sp),
                           Builder(
                             builder: (context) {
                               return GestureDetector(
@@ -182,56 +145,81 @@ class HomeScreen extends StatelessWidget {
                                   Icons.menu,
                                   color: MyFoodAppColor.whiteColor,
                                   size: 25.sp,
-                                ),
+                                ).onlyPadding(left: 4.sp),
                               );
                             },
-                          ),
+                          )
                         ],
                       ),
-                      Icon(
-                        Icons.search_rounded,
-                        color: MyFoodAppColor.whiteColor,
-                        size: 25.sp,
-                      ).onlyPadding(top: 130.sp)
+                      MyText(
+                        text: 'Hello, John',
+                        textColor: MyFoodAppColor.greywColor,
+                        fontSize: 12.sp,
+                      ).onlyPadding(top: 15.sp),
+                      MyText(
+                        text: 'Make your own food,',
+                        textColor: MyFoodAppColor.greywColor,
+                        fontSize: 15.sp,
+                        fontWeightText: FontWeight.w500,
+                      ),
+                      Row(
+                        children: [
+                          MyText(
+                            text: 'stay at',
+                            textColor: MyFoodAppColor.greywColor,
+                            fontSize: 15.sp,
+                            fontWeightText: FontWeight.w500,
+                          ),
+                          MyText(
+                            text: ' Home,',
+                            textColor: MyFoodAppColor.yellowColor,
+                            fontSize: 15.sp,
+                            fontWeightText: FontWeight.w600,
+                          )
+                        ],
+                      ),
+                      GestureDetector(onTap: (){
+                        Get.to(SearchScreen());
+                      },
+                        child: MyContainer(
+                          width: 30.sp,
+                          height: 30.sp,
+                          color: MyFoodAppColor.yellowColor,
+                          borderRadius: BorderRadius.circular(7.sp),
+                          containerWidget: Icon(
+                            Icons.search_rounded,
+                            color: MyFoodAppColor.whiteColor,
+                            size: 22.sp,
+                          ),
+                        ).onlyPadding(left: 230.sp),
+                      ),
                     ],
                   )
+                      .onlyPadding(left: 20.sp, top: 20.sp)
+                      .onlyPadding(top: 20.sp),
                 ],
               ),
             ),
           ),
+          // SliverList(
+          //   delegate: SliverChildBuilderDelegate(
+          //         (context, index) => Container(
+          //       height: 50,
+          //       decoration: BoxDecoration(color: MyFoodAppColor.yellowColor),
+          //     ).allPadding(all: 10.sp),
+          //     childCount: 10,
+          //   ),
+          // ),
+          // SliverGrid(
+          //   gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
+          //       childAspectRatio: 4, maxCrossAxisExtent: 10),
+          //   delegate: SliverChildBuilderDelegate((context, index) => Container(
+          //     width: 100,
+          //     height: 100,
+          //     color: MyFoodAppColor.yellowColor,
+          //   ).allPadding(all: 5)),
+          // )
         ],
-      ),
-      bottomNavigationBar: Obx(
-        () => GNav(
-          backgroundColor: MyFoodAppColor.blackColor,
-          activeColor: MyFoodAppColor.yellowColor,
-          color: MyFoodAppColor.whiteColor,
-          gap: 6,
-          selectedIndex: controller.selectedIndex.value,
-          onTabChange: (int index) {
-            controller.selectedIndex.value = index;
-            print(controller.selectedIndex.value);
-            // if (controller.selectedIndex.value == 0) {
-            // } else if (controller.selectedIndex.value == 1) {
-            // } else if (controller.selectedIndex.value == 2) {
-            //   Get.to(EditProfile());
-            // }
-          },
-          tabs: [
-            GButton(
-              icon: Icons.home,
-              text: 'Home',
-            ),
-            GButton(
-              icon: Icons.favorite_border,
-              text: 'Favourite',
-            ),
-            GButton(
-              icon: Icons.manage_accounts_sharp,
-              text: 'Profile',
-            ),
-          ],
-        ),
       ),
     );
   }

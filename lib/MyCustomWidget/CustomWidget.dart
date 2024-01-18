@@ -22,7 +22,7 @@ class MyText extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       '$text',
-      textAlign: TextAlign.center,
+      textAlign: textAlign,
       style: TextStyle(
         fontFamily: 'poppins',
         fontSize: fontSize,
@@ -44,6 +44,8 @@ class MyContainer extends StatelessWidget {
   String? image;
   BoxBorder? border;
   double? blurRadius;
+  Gradient? gradiant;
+  Clip? myClip;
 
   MyContainer({
     this.width,
@@ -55,6 +57,8 @@ class MyContainer extends StatelessWidget {
     this.image,
     this.border,
     this.blurRadius,
+    this.gradiant,
+    this.myClip,
   });
 
   @override
@@ -62,6 +66,7 @@ class MyContainer extends StatelessWidget {
     return Container(
       width: width,
       height: height,
+      clipBehavior: myClip ?? Clip.none,
       decoration: BoxDecoration(
         image: DecorationImage(
           image: AssetImage('$image'),
@@ -70,6 +75,7 @@ class MyContainer extends StatelessWidget {
         color: color,
         borderRadius: borderRadius,
         border: border,
+        gradient: gradiant,
       ),
       child: containerWidget,
     );
@@ -84,6 +90,7 @@ class MyTextField extends StatelessWidget {
   bool? obscuringText;
   String? obscuringCharacter;
   IconData? icon;
+  IconData? prefixIcon;
   VoidCallback? onIconTap;
   double? blurRadius;
   double? spreadRadius;
@@ -92,8 +99,12 @@ class MyTextField extends StatelessWidget {
   Color? borderSideColor;
   Color? fillColor;
   Color? iconColor;
+  Color? prefixIconColor;
   EdgeInsetsGeometry? contectPadding;
   Color? hintTextColor;
+  BorderRadius? borderRadiusField;
+  double? hintFontSize;
+  double? widthTextField;
 
   MyTextField({
     this.hintText,
@@ -112,6 +123,11 @@ class MyTextField extends StatelessWidget {
     this.iconColor,
     this.contectPadding,
     this.hintTextColor,
+    this.prefixIcon,
+    this.prefixIconColor,
+    this.borderRadiusField,
+    this.hintFontSize,
+    this.widthTextField,
   });
 
   @override
@@ -129,7 +145,7 @@ class MyTextField extends StatelessWidget {
         ],
       ),
       height: 6.0.h,
-      width: 240.sp,
+      width: widthTextField ?? 240.sp,
       child: TextFormField(
         obscureText: obscuringText ?? false,
         obscuringCharacter: obscuringCharacter ?? '*',
@@ -143,30 +159,34 @@ class MyTextField extends StatelessWidget {
               color: iconColor,
             ),
           ),
+          prefixIcon: Icon(
+            prefixIcon,
+            color: prefixIconColor,
+          ),
           contentPadding:
               contectPadding ?? EdgeInsets.only(left: 20.sp, bottom: 23.sp),
           fillColor: fillColor ?? MyFoodAppColor.whiteColor,
           filled: true,
           hintText: hintText,
           hintStyle: TextStyle(
-              fontSize: 12.sp,
+              fontSize: hintFontSize ?? 12.sp,
               color: hintTextColor ?? MyFoodAppColor.blackColor),
           border: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(30.sp),
+            borderRadius: borderRadiusField ?? BorderRadius.circular(30.sp),
             borderSide: BorderSide(
               strokeAlign: BorderSide.strokeAlignInside,
               color: borderSideColor ?? MyFoodAppColor.yellowColor,
             ),
           ),
           focusedBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(30.sp),
+            borderRadius: borderRadiusField ?? BorderRadius.circular(30.sp),
             borderSide: BorderSide(
               strokeAlign: BorderSide.strokeAlignInside,
               color: borderSideColor ?? MyFoodAppColor.yellowColor,
             ),
           ),
           enabledBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(30.sp),
+            borderRadius: borderRadiusField ?? BorderRadius.circular(30.sp),
             borderSide: BorderSide(
               strokeAlign: BorderSide.strokeAlignInside,
               color: borderSideColor ?? MyFoodAppColor.yellowColor,

@@ -102,7 +102,7 @@ class OnBoardingScreen extends StatelessWidget {
                               Icons.arrow_forward,
                               size: 20.sp,
                             ).allPadding(all: 10.sp),
-                    ).onlyPadding(left: 80.sp,top: 35.sp),
+                    )
                   ),
                 )
               ],

@@ -7,5 +7,5 @@ class MyFoodAppColor{
   static const Color forgetColor=Color(0xff969494);
   static const Color forgeTextColor=Color(0xff7D7D7D);
   static const Color appBarColor=Color(0xff171717);
-
+  static const Color textFieldBorderColor=Color(0xffA9A9A9);
 }

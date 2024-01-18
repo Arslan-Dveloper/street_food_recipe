@@ -2,8 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class MyFoodAppController extends GetxController {
+  Rx<int> selectedIndex = 0.obs;
   Rx<int> pageIndex = 0.obs;
   final pageController = PageController(initialPage: 0);
+  final pageControllerOne =
+      PageController(initialPage: 0, viewportFraction: 0.7);
 
   void onPageChanged(int value) {
     pageIndex.value = value;
@@ -37,5 +40,5 @@ class MyFoodAppController extends GetxController {
     'Set your target weight and select your monthly schedule, and we’ill do the rest',
   ].obs;
 
-  Rx<int> selectedIndex = 0.obs;
+
 }

@@ -4,7 +4,8 @@ import 'package:sizer/sizer.dart';
 import 'package:street_food_recipe/Extension/Padding_Extension.dart';
 import 'package:street_food_recipe/Helpers/constant.dart';
 import 'package:street_food_recipe/MyCustomWidget/CustomWidget.dart';
-import 'package:street_food_recipe/Views/Module_No_1/Screens/Home_Screen.dart';
+import 'package:street_food_recipe/Views/Module_No_1/Layout/Bottom_Navigation.dart';
+
 
 class ForgetPasswordScreen extends StatelessWidget {
   @override
@@ -57,7 +58,7 @@ class ForgetPasswordScreen extends StatelessWidget {
               ).onlyPadding(left: 20.sp,top: 20.sp),
               GestureDetector(
                 onTap: (){
-                  Get.to(HomeScreen());
+                  Get.to(BottomNavigation());
                 },
                 child: MyContainer(
                   width: 120.sp,
