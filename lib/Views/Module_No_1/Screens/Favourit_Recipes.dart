@@ -20,7 +20,7 @@ class FavouriteRecipes extends StatelessWidget {
         ),
         centerTitle: true,
         shape: Border(
-          bottom: BorderSide(color: MyFoodAppColor.greywColor),
+          bottom: BorderSide(color: MyFoodAppColor.greyColor),
         ),
       ),
       body: SafeArea(
@@ -60,7 +60,7 @@ class FavouriteRecipes extends StatelessWidget {
                 },
               ),
             ),
-            Divider(color: MyFoodAppColor.greywColor),
+            Divider(color: MyFoodAppColor.greyColor),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -95,7 +95,7 @@ class FavouriteRecipes extends StatelessWidget {
                 },
               ),
             ),
-            Divider(color: MyFoodAppColor.greywColor),
+            Divider(color: MyFoodAppColor.greyColor),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [

@@ -22,7 +22,7 @@ class HomeScreen extends StatelessWidget {
                 Container(
                   decoration: BoxDecoration(
                       border: Border.all(
-                          width: 2.sp, color: MyFoodAppColor.greywColor),
+                          width: 2.sp, color: MyFoodAppColor.greyColor),
                       borderRadius: BorderRadius.circular(50)),
                   child: MyContainer(
                     height: 70.sp,
@@ -50,7 +50,7 @@ class HomeScreen extends StatelessWidget {
             ).onlyPadding(left: 15.sp),
             Divider(
               thickness: 2.sp,
-              color: MyFoodAppColor.greywColor,
+              color: MyFoodAppColor.greyColor,
             ),
             MyContainerShadow(
               widget: Row(
@@ -123,7 +123,7 @@ class HomeScreen extends StatelessWidget {
                                 .allPadding(all: 4.sp),
                             decoration: BoxDecoration(
                                 border: Border.all(
-                                    color: MyFoodAppColor.greywColor),
+                                    color: MyFoodAppColor.greyColor),
                                 borderRadius: BorderRadius.circular(50.sp)),
                           ),
                           Icon(
@@ -149,12 +149,12 @@ class HomeScreen extends StatelessWidget {
                       ),
                       MyText(
                         text: 'Hello, John',
-                        textColor: MyFoodAppColor.greywColor,
+                        textColor: MyFoodAppColor.greyColor,
                         fontSize: 12.sp,
                       ).onlyPadding(top: 15.sp),
                       MyText(
                         text: 'Make your own food,',
-                        textColor: MyFoodAppColor.greywColor,
+                        textColor: MyFoodAppColor.greyColor,
                         fontSize: 15.sp,
                         fontWeightText: FontWeight.w500,
                       ),
@@ -162,7 +162,7 @@ class HomeScreen extends StatelessWidget {
                         children: [
                           MyText(
                             text: 'stay at',
-                            textColor: MyFoodAppColor.greywColor,
+                            textColor: MyFoodAppColor.greyColor,
                             fontSize: 15.sp,
                             fontWeightText: FontWeight.w500,
                           ),

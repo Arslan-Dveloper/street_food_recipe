@@ -45,7 +45,7 @@ class SingUpPage extends StatelessWidget {
               MyText(textAlign: TextAlign.justify,
                 fontSize: 12.sp,
                 text: 'Create an account so you can see our\nlatest Racipes',
-                textColor: MyFoodAppColor.greywColor,
+                textColor: MyFoodAppColor.greyColor,
               ).onlyPadding(top: 100.sp, left: 32.sp,),
               Image.asset('assets/images/purepng 4.png',scale: 1.8,).onlyPadding(top: 490.sp,left: 130.sp),
               Column(
@@ -54,7 +54,7 @@ class SingUpPage extends StatelessWidget {
                   MyText(
                     fontSize: 12.sp,
                     text: 'Name',
-                    textColor: MyFoodAppColor.greywColor,
+                    textColor: MyFoodAppColor.greyColor,
                   ).onlyPadding(left: 10.sp),
                   MyTextField(
                     textFilledController: _nameController,
@@ -64,7 +64,7 @@ class SingUpPage extends StatelessWidget {
                   MyText(
                     fontSize: 12.sp,
                     text: 'Email',
-                    textColor: MyFoodAppColor.greywColor,
+                    textColor: MyFoodAppColor.greyColor,
                   ).onlyPadding(top: 10.sp, left: 10.sp),
                   MyTextField(
                     keyBoardType: TextInputType.emailAddress,
@@ -74,7 +74,7 @@ class SingUpPage extends StatelessWidget {
                   MyText(
                     fontSize: 12.sp,
                     text: 'Password',
-                    textColor: MyFoodAppColor.greywColor,
+                    textColor: MyFoodAppColor.greyColor,
                   ).onlyPadding(top: 10.sp, left: 10.sp),
                   Obx(
                     () => MyTextField(
@@ -94,7 +94,7 @@ class SingUpPage extends StatelessWidget {
                   MyText(
                     fontSize: 12.sp,
                     text: 'Confirm Password',
-                    textColor: MyFoodAppColor.greywColor,
+                    textColor: MyFoodAppColor.greyColor,
                   ).onlyPadding(top: 10.sp, left: 10.sp),
                   Obx(
                     () => MyTextField(

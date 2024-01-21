@@ -33,7 +33,7 @@ class BottomBar extends StatelessWidget {
                       child: Image.asset('assets/images/Ellipse 2.png')
                           .allPadding(all: 4.sp),
                       decoration: BoxDecoration(
-                          border: Border.all(color: MyFoodAppColor.greywColor),
+                          border: Border.all(color: MyFoodAppColor.greyColor),
                           borderRadius: BorderRadius.circular(50.sp)),
                     ),
                     Icon(
@@ -59,12 +59,12 @@ class BottomBar extends StatelessWidget {
                 ),
                 MyText(
                   text: 'Hello, John',
-                  textColor: MyFoodAppColor.greywColor,
+                  textColor: MyFoodAppColor.greyColor,
                   fontSize: 12.sp,
                 ),
                 MyText(
                   text: 'Make your own food,',
-                  textColor: MyFoodAppColor.greywColor,
+                  textColor: MyFoodAppColor.greyColor,
                   fontSize: 15.sp,
                   fontWeightText: FontWeight.w500,
                 ),
@@ -72,7 +72,7 @@ class BottomBar extends StatelessWidget {
                   children: [
                     MyText(
                       text: 'stay at',
-                      textColor: MyFoodAppColor.greywColor,
+                      textColor: MyFoodAppColor.greyColor,
                       fontSize: 15.sp,
                       fontWeightText: FontWeight.w500,
                     ),
@@ -135,7 +135,7 @@ class BottomBar extends StatelessWidget {
                             MyText(
                               text: 'by Jacob Jones',
                               fontSize: 12.sp,
-                              textColor: MyFoodAppColor.greywColor,
+                              textColor: MyFoodAppColor.greyColor,
                             ),
                           ],
                         ),

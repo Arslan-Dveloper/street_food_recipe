@@ -151,7 +151,7 @@ class MyTextField extends StatelessWidget {
         boxShadow: [
           BoxShadow(
             color: containerShadowColor ??
-                MyFoodAppColor.greywColor.withOpacity(0.3),
+                MyFoodAppColor.greyColor.withOpacity(0.3),
             blurRadius: blurRadius ?? 20.sp,
             offset: offset ?? Offset(0, 10),
             spreadRadius: spreadRadius ?? 0.5.sp,
@@ -234,7 +234,7 @@ class MyContainerShadow extends StatelessWidget {
         color: MyFoodAppColor.whiteColor,
         boxShadow: [
           BoxShadow(
-              color: MyFoodAppColor.greywColor.withOpacity(0.10),
+              color: MyFoodAppColor.greyColor.withOpacity(0.10),
               offset: Offset(0, 3),
               blurRadius: 8.sp,
               spreadRadius: 2.sp)

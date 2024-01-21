@@ -40,7 +40,7 @@ class EditProfile extends StatelessWidget {
                 text: 'abc@gmail.com',
                 fontSize: 10.sp,
                 fontWeightText: FontWeight.w600,
-                textColor: MyFoodAppColor.greywColor,
+                textColor: MyFoodAppColor.greyColor,
               ).onlyPadding(left: 70.sp),
               MyContainer(
                 height: 100.sp,
@@ -54,7 +54,7 @@ class EditProfile extends StatelessWidget {
                 text: 'Name',
                 fontSize: 12.sp,
                 fontWeightText: FontWeight.w600,
-                textColor: MyFoodAppColor.greywColor,
+                textColor: MyFoodAppColor.greyColor,
               ).onlyPadding(left: 10.sp, top: 20.sp),
               MyTextField(
                 borderSideColor: MyFoodAppColor.textFieldBorderColor,
@@ -69,7 +69,7 @@ class EditProfile extends StatelessWidget {
                 text: 'Email',
                 fontSize: 12.sp,
                 fontWeightText: FontWeight.w600,
-                textColor: MyFoodAppColor.greywColor,
+                textColor: MyFoodAppColor.greyColor,
               ).onlyPadding(left: 10.sp, top: 20.sp),
               MyTextField(
                 borderSideColor: MyFoodAppColor.textFieldBorderColor,

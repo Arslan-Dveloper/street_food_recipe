@@ -11,7 +11,7 @@ class SearchScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         shape: Border(
-          bottom: BorderSide(color: MyFoodAppColor.greywColor),
+          bottom: BorderSide(color: MyFoodAppColor.greyColor),
         ),
         leading: GestureDetector(
           onTap: () {
@@ -35,7 +35,7 @@ class SearchScreen extends StatelessWidget {
               offset: Offset(0, 20),
               prefixIcon: Icons.search_rounded,
               hintText: 'Search Recipe here',
-              hintTextColor: MyFoodAppColor.greywColor,
+              hintTextColor: MyFoodAppColor.greyColor,
               hintFontSize: 14.sp,
               widthTextField: 260.sp,
             ).onlyPadding(left: 5.sp, top: 15.sp),

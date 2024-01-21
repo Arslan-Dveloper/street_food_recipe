@@ -26,7 +26,7 @@ class OnBoardingScreen extends StatelessWidget {
                     )
                   : MyText(
                       text: 'Skip',
-                      textColor: MyFoodAppColor.greywColor,
+                      textColor: MyFoodAppColor.greyColor,
                       fontSize: 14.sp,
                       fontWeightText: FontWeight.w600,
                     ).onlyPadding(right: 10.sp),
@@ -74,7 +74,7 @@ class OnBoardingScreen extends StatelessWidget {
                 MyText(
                   text: controller.bodyText[index],
                   fontSize: 13.sp,
-                  textColor: MyFoodAppColor.greywColor,
+                  textColor: MyFoodAppColor.greyColor,
                   textAlign: TextAlign.center,
                 ).onlyPadding(top: 25.sp),
                 GestureDetector(

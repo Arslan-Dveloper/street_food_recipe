@@ -43,7 +43,7 @@ class ScreenLogIn extends StatelessWidget {
               text:
                   'I am very happy to see you. You can continue to login for latest recipe',
               fontSize: 12.sp,
-              textColor: MyFoodAppColor.greywColor,
+              textColor: MyFoodAppColor.greyColor,
             ).onlyPadding(left: 19.sp, top: 90.sp, right: 20.sp),
             Positioned(
               bottom: 0,
@@ -62,7 +62,7 @@ class ScreenLogIn extends StatelessWidget {
                       MyText(
                         text: 'Name',
                         fontSize: 12.sp,
-                        textColor: MyFoodAppColor.greywColor,
+                        textColor: MyFoodAppColor.greyColor,
                       ).onlyPadding(left: 10.sp),
                       MyTextField(
                         hintText: 'abc@gmail.com',
@@ -70,7 +70,7 @@ class ScreenLogIn extends StatelessWidget {
                       MyText(
                         text: 'Password',
                         fontSize: 12.sp,
-                        textColor: MyFoodAppColor.greywColor,
+                        textColor: MyFoodAppColor.greyColor,
                       ).onlyPadding(left: 10.sp, top: 20.sp),
                       Obx(
                         () => MyTextField(

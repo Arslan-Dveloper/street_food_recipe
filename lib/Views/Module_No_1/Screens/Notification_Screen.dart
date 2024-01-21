@@ -22,7 +22,7 @@ class NotificationScreen extends StatelessWidget {
           },
           child: Icon(Icons.arrow_back_ios),
         ),
-        shape: Border(bottom: BorderSide(color: MyFoodAppColor.greywColor)),
+        shape: Border(bottom: BorderSide(color: MyFoodAppColor.greyColor)),
       ),
       body: SafeArea(
         child: Column(
@@ -42,7 +42,7 @@ class NotificationScreen extends StatelessWidget {
                   children: [
                     MyText(
                       text: 'uploaded by ',
-                      textColor: MyFoodAppColor.greywColor,
+                      textColor: MyFoodAppColor.greyColor,
                       fontSize: 11.sp,
                     ),
                     MyText(
@@ -70,7 +70,7 @@ class NotificationScreen extends StatelessWidget {
                   children: [
                     MyText(
                       text: 'uploaded by ',
-                      textColor: MyFoodAppColor.greywColor,
+                      textColor: MyFoodAppColor.greyColor,
                       fontSize: 11.sp,
                     ),
                     MyText(
@@ -98,7 +98,7 @@ class NotificationScreen extends StatelessWidget {
                   children: [
                     MyText(
                       text: 'uploaded by ',
-                      textColor: MyFoodAppColor.greywColor,
+                      textColor: MyFoodAppColor.greyColor,
                       fontSize: 11.sp,
                     ),
                     MyText(
@@ -126,7 +126,7 @@ class NotificationScreen extends StatelessWidget {
                   children: [
                     MyText(
                       text: 'uploaded by ',
-                      textColor: MyFoodAppColor.greywColor,
+                      textColor: MyFoodAppColor.greyColor,
                       fontSize: 11.sp,
                     ),
                     MyText(
@@ -154,7 +154,7 @@ class NotificationScreen extends StatelessWidget {
                   children: [
                     MyText(
                       text: 'uploaded by ',
-                      textColor: MyFoodAppColor.greywColor,
+                      textColor: MyFoodAppColor.greyColor,
                       fontSize: 11.sp,
                     ),
                     MyText(
@@ -182,7 +182,7 @@ class NotificationScreen extends StatelessWidget {
                   children: [
                     MyText(
                       text: 'uploaded by ',
-                      textColor: MyFoodAppColor.greywColor,
+                      textColor: MyFoodAppColor.greyColor,
                       fontSize: 11.sp,
                     ),
                     MyText(
