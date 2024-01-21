@@ -120,7 +120,7 @@ class SingUpPage extends StatelessWidget {
                       text: 'SIGNUP',
                       textColor: MyFoodAppColor.blackColor,
                       fontSize: 14.sp,
-                      fontWeightText: FontWeight.w800,
+                      fontWeightText: FontWeight.w800,textAlign: TextAlign.center,
                     ).onlyPadding(top: 6.sp),
                   ).onlyPadding(top: 40.sp, left: 16.sp),
                   MyContainer(

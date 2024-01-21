@@ -104,7 +104,7 @@ class ScreenLogIn extends StatelessWidget {
                         containerWidget: MyText(
                           text: 'LOGIN',
                           fontSize: 16.sp,
-                          fontWeightText: FontWeight.bold,
+                          fontWeightText: FontWeight.bold,textAlign: TextAlign.center,
                         ).onlyPadding(top: 6.sp),
                       ).onlyPadding(left: 50.sp, top: 40.sp),
                     ],

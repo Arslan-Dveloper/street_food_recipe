@@ -46,6 +46,9 @@ class MyContainer extends StatelessWidget {
   double? blurRadius;
   Gradient? gradiant;
   Clip? myClip;
+  Color? shadowColor;
+  double? spreadRadiusBox;
+  Offset? offset;
 
   MyContainer({
     this.width,
@@ -59,6 +62,9 @@ class MyContainer extends StatelessWidget {
     this.blurRadius,
     this.gradiant,
     this.myClip,
+    this.shadowColor,
+    this.spreadRadiusBox,
+    this.offset,
   });
 
   @override
@@ -76,6 +82,14 @@ class MyContainer extends StatelessWidget {
         borderRadius: borderRadius,
         border: border,
         gradient: gradiant,
+        boxShadow: [
+          BoxShadow(
+            color: shadowColor ?? Colors.transparent,
+            spreadRadius: spreadRadiusBox ?? 0,
+            blurRadius: blurRadius ?? 0,
+            offset: offset ?? Offset(0, 0),
+          ),
+        ],
       ),
       child: containerWidget,
     );
@@ -159,10 +173,10 @@ class MyTextField extends StatelessWidget {
               color: iconColor,
             ),
           ),
-          prefixIcon: Icon(
-            prefixIcon,
-            color: prefixIconColor,
-          ),
+          // prefixIcon: Icon(
+          //   prefixIcon,
+          //   color: prefixIconColor,
+          // ),
           contentPadding:
               contectPadding ?? EdgeInsets.only(left: 20.sp, bottom: 23.sp),
           fillColor: fillColor ?? MyFoodAppColor.whiteColor,

@@ -4,7 +4,7 @@ import 'package:sizer/sizer.dart';
 import 'package:street_food_recipe/Extension/Padding_Extension.dart';
 import 'package:street_food_recipe/Helpers/constant.dart';
 import 'package:street_food_recipe/MyCustomWidget/CustomWidget.dart';
-import 'package:street_food_recipe/Views/Module_No_1/Screens/HomeScreen.dart';
+import 'package:street_food_recipe/Views/Module_No_1/Screens/Favourit_Recipes_Last.dart';
 
 class EditProfile extends StatelessWidget {
   @override
@@ -82,7 +82,7 @@ class EditProfile extends StatelessWidget {
               ).onlyPadding(top: 6.sp),
               GestureDetector(
                 onTap: () {
-                  Get.to(HomeLayout());
+                  Get.to(MyFavouriteRecipes());
                 },
                 child: MyContainer(
                   width: 150.sp,
@@ -94,7 +94,8 @@ class EditProfile extends StatelessWidget {
                     textColor: MyFoodAppColor.yellowColor,
                     fontSize: 16.sp,
                     fontWeightText: FontWeight.w600,
-                  ).onlyPadding(left: 40.sp, top: 6.sp),
+                    textAlign: TextAlign.center,
+                  ).onlyPadding(top: 6.sp),
                 ).onlyPadding(left: 60.sp, top: 60.sp),
               )
             ],

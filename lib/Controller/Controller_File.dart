@@ -39,6 +39,7 @@ class MyFoodAppController extends GetxController {
     'We are updating our food database every minute to help you track your calories',
     'Set your target weight and select your monthly schedule, and we’ill do the rest',
   ].obs;
-
-
+  Rx<IconData> MyIcon = Icons.arrow_forward.obs;
+  Rx<int> number = 0.obs;
+  Rx<bool> isTrue = false.obs;
 }

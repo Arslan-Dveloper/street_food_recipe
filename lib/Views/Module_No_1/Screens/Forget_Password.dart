@@ -68,7 +68,7 @@ class ForgetPasswordScreen extends StatelessWidget {
                   containerWidget: MyText(
                     text: 'SEND',
                     fontSize: 16.sp,
-                    fontWeightText: FontWeight.w700,
+                    fontWeightText: FontWeight.w700,textAlign: TextAlign.center,
                   ).onlyPadding(top: 3.sp),
                 ).onlyPadding(top: 50.sp,left: 95.sp),
               )

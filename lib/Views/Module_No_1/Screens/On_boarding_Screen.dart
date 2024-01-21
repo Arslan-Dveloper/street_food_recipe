@@ -75,6 +75,7 @@ class OnBoardingScreen extends StatelessWidget {
                   text: controller.bodyText[index],
                   fontSize: 13.sp,
                   textColor: MyFoodAppColor.greywColor,
+                  textAlign: TextAlign.center,
                 ).onlyPadding(top: 25.sp),
                 GestureDetector(
                   onTap: () {
@@ -99,12 +100,12 @@ class OnBoardingScreen extends StatelessWidget {
                             ).symmetricPadding(
                               vertical: 6.sp, horizontal: 16.sp)
                           : Icon(
-                              Icons.arrow_forward,
+                              controller.MyIcon.value,
                               size: 20.sp,
                             ).allPadding(all: 10.sp),
-                    )
+                    ),
                   ),
-                )
+                ),
               ],
             );
           },
