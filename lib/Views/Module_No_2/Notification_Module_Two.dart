@@ -33,7 +33,7 @@ class NotificationScreen extends StatelessWidget {
       ),
       body: SafeArea(
         child: ListView.builder(
-          itemCount: 5,
+          itemCount: 6,
           itemBuilder: (context, index) {
             return Container(
               height: 65.sp,
