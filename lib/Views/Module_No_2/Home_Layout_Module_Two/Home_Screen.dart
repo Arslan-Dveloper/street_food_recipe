@@ -5,14 +5,14 @@ import 'package:sizer/sizer.dart';
 import 'package:street_food_recipe/Controller/Controller_Module_Two.dart';
 import 'package:street_food_recipe/Extension/Padding_Extension.dart';
 import 'package:street_food_recipe/Helpers/constant.dart';
-import 'package:street_food_recipe/Views/Module_No_2/Chef_Mood_Add_Screen.dart';
 import 'package:street_food_recipe/Views/Module_No_2/Chef_Mood_Edit_Profile.dart';
 import 'package:street_food_recipe/Views/Module_No_2/Chef_Mood_Home_Screen.dart';
+import 'package:street_food_recipe/Views/Module_No_2/Select_Language.dart';
 
 class HomeScreenTwo extends StatelessWidget {
   List<Widget> _layoutScreens = [
     ChefMoodHomeScreen(),
-    ChefMoodAddScreen(),
+    SelectLanguage(),
     ChefMoodEditProfile(),
   ];
 
