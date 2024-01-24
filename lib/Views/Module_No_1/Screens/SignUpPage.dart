@@ -17,8 +17,10 @@ class SingUpPage extends StatelessWidget {
   Widget build(BuildContext context) {
     MyFoodAppController controller = Get.put(MyFoodAppController());
     return Scaffold(
-      resizeToAvoidBottomInset: false,
+        backgroundColor: MyFoodAppColor.whiteColor,
+        resizeToAvoidBottomInset: false,
       appBar: AppBar(
+        backgroundColor: MyFoodAppColor.whiteColor,
         leading: GestureDetector(
           onTap: () {
             Get.back();

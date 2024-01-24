@@ -119,6 +119,7 @@ class MyTextField extends StatelessWidget {
   BorderRadius? borderRadiusField;
   double? hintFontSize;
   double? widthTextField;
+  double?iconSize;
 
   MyTextField({
     this.hintText,
@@ -142,6 +143,7 @@ class MyTextField extends StatelessWidget {
     this.borderRadiusField,
     this.hintFontSize,
     this.widthTextField,
+    this.iconSize,
   });
 
   @override
@@ -169,7 +171,7 @@ class MyTextField extends StatelessWidget {
           suffixIcon: GestureDetector(
             onTap: onIconTap,
             child: Icon(
-              icon,
+              icon,size: iconSize,
               color: iconColor,
             ),
           ),

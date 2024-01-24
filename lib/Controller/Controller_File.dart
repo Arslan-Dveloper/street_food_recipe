@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:street_food_recipe/Helpers/constant.dart';
 
 class MyFoodAppController extends GetxController {
   Rx<int> selectedIndex = 0.obs;
   Rx<int> pageIndex = 0.obs;
   final pageController = PageController(initialPage: 0);
   final pageControllerOne =
-      PageController(initialPage: 0, viewportFraction: 0.7);
+      PageController(initialPage: 1, viewportFraction: 0.9);
 
   void onPageChanged(int value) {
     pageIndex.value = value;
@@ -42,4 +43,16 @@ class MyFoodAppController extends GetxController {
   Rx<IconData> MyIcon = Icons.arrow_forward.obs;
   Rx<int> number = 0.obs;
   Rx<bool> isTrue = false.obs;
+
+  List<String> data = [
+    'First',
+    'Second',
+    'Third',
+    'Forth',
+    'Fifth',
+  ];
+
+  Rx<Color> whiteColor = MyFoodAppColor.whiteColor.obs;
+  Rx<Color> yellowColor = MyFoodAppColor.yellowColor.obs;
+  Rx<bool> click = false.obs;
 }

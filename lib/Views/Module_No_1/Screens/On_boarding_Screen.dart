@@ -86,26 +86,29 @@ class OnBoardingScreen extends StatelessWidget {
                             curve: Curves.bounceOut);
                   },
                   child: Obx(
-                    () => Container(
-                      decoration: BoxDecoration(
-                        color: MyFoodAppColor.yellowColor,
-                        borderRadius: BorderRadius.circular(50.sp),
+                    () => Align(
+                      alignment: Alignment.center,
+                      child: Container(
+                        decoration: BoxDecoration(
+                          color: MyFoodAppColor.yellowColor,
+                          borderRadius: BorderRadius.circular(50.sp),
+                        ),
+                        child: controller.pageIndex.value ==
+                                controller.images.length - 1
+                            ? MyText(
+                                text: 'Get Started',
+                                fontSize: 16.sp,
+                                fontWeightText: FontWeight.bold,
+                              ).symmetricPadding(
+                                vertical: 6.sp, horizontal: 16.sp)
+                            : Icon(
+                                controller.MyIcon.value,
+                                size: 20.sp,
+                              ).allPadding(all: 10.sp),
                       ),
-                      child: controller.pageIndex.value ==
-                              controller.images.length - 1
-                          ? MyText(
-                              text: 'Get Started',
-                              fontSize: 16.sp,
-                              fontWeightText: FontWeight.bold,
-                            ).symmetricPadding(
-                              vertical: 6.sp, horizontal: 16.sp)
-                          : Icon(
-                              controller.MyIcon.value,
-                              size: 20.sp,
-                            ).allPadding(all: 10.sp),
                     ),
                   ),
-                ),
+                ).onlyPadding(top: 25.sp),
               ],
             );
           },

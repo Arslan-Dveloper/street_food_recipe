@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:sizer/sizer.dart';
+import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:street_food_recipe/Controller/Controller_File.dart';
 import 'package:street_food_recipe/Extension/Padding_Extension.dart';
 import 'package:street_food_recipe/Helpers/constant.dart';
@@ -42,6 +43,7 @@ class HomeLayout extends StatelessWidget {
                     onChanged: (value) {
                       controller.isTrue.value = !controller.isTrue.value;
                       value = controller.isTrue.value;
+                      controller.isTrue.value = false;
                       Get.to(SwitchMoodScreen());
                     },
                   ),
@@ -119,13 +121,13 @@ class HomeLayout extends StatelessWidget {
         ),
       ),
       body: CustomScrollView(
+        physics: BouncingScrollPhysics(),
         slivers: [
           SliverAppBar(
             backgroundColor: MyFoodAppColor.appBarColor,
-            expandedHeight: 220.sp,
-            flexibleSpace: Column(
-              children: [
-                Column(
+            expandedHeight: 200.sp,
+            flexibleSpace: FlexibleSpaceBar(
+                background: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Row(
@@ -210,10 +212,108 @@ class HomeLayout extends StatelessWidget {
                       ).onlyPadding(left: 230.sp),
                     ),
                   ],
-                ).onlyPadding(left: 20.sp, top: 20.sp).onlyPadding(top: 20.sp),
+                ).onlyPadding(left: 20.sp, top: 20.sp).onlyPadding(top: 20.sp)),
+          ),
+          SliverToBoxAdapter(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                MyText(
+                  text: 'Feature Recipes',
+                  fontSize: 15.sp,
+                  fontWeightText: FontWeight.w600,
+                ).onlyPadding(top: 5.sp, left: 5.sp),
+                SizedBox(
+                  height: 130.sp,
+                  child: PageView.builder(
+                    controller: controller.pageControllerOne,
+                    itemCount: 7,
+                    scrollDirection: Axis.horizontal,
+                    itemBuilder: (context, index) {
+                      return MyContainer(
+                        color: MyFoodAppColor.yellowColor,
+                        borderRadius: BorderRadius.circular(10.sp),
+                      ).onlyPadding(top: 7.sp, left: 5.sp);
+                    },
+                  ),
+                ),
+                SmoothPageIndicator(
+                  controller: controller.pageControllerOne,
+                  count: 7,
+                  effect: SlideEffect(
+                    activeDotColor: MyFoodAppColor.yellowColor,
+                  ),
+                ).onlyPadding(left: 90.sp, top: 10.sp),
+                Row(
+                  children: [
+                    MyText(
+                      text: 'Categories',
+                      fontSize: 16.sp,
+                      fontWeightText: FontWeight.w600,
+                    ).onlyPadding(left: 7.sp),
+                    Obx(
+                      () => GestureDetector(
+                        onTap: () {
+                          controller.click.value = !controller.click.value;
+                        },
+                        child: Icon(
+                          Icons.arrow_back_ios_sharp,
+                          color: controller.click.value
+                              ? MyFoodAppColor.yellowColor
+                              : MyFoodAppColor.appBarColor,
+                          size: 16.sp,
+                        ).onlyPadding(left: 160.sp),
+                      ),
+                    ),
+                    Icon(
+                      Icons.arrow_forward_ios,
+                      size: 16.sp,
+                    ),
+                  ],
+                ).onlyPadding(top: 5.sp),
+                SizedBox(
+                  height: 40.sp,
+                  child: ListView.builder(
+                    itemCount: controller.data.length,
+                    scrollDirection: Axis.horizontal,
+                    itemBuilder: (context, index) {
+                      return MyContainer(
+                        width: 100.sp,
+                        borderRadius: BorderRadius.circular(15.sp),
+                        color: controller.whiteColor.value,
+                        border: Border.all(
+                            color: MyFoodAppColor.yellowColor, width: 2),
+                        containerWidget: MyText(
+                          text: controller.data[index],
+                          fontSize: 16.sp,
+                          textAlign: TextAlign.center,
+                          fontWeightText: FontWeight.w600,
+                        ).onlyPadding(top: 5.sp),
+                      ).onlyPadding(left: 8.sp, top: 5.sp);
+                    },
+                  ),
+                ).onlyPadding(top: 10.sp),
+                // GridView.builder(
+                //   shrinkWrap: true,
+                //   itemCount: 10,
+                //   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                //       crossAxisCount: 2),
+                //   itemBuilder: (context, index) {
+                //     return MyContainer(
+                //       height: 100,
+                //       width: 100,
+                //       containerWidget: Image.asset('assets/images/google.png'),
+                //     );
+                //   },
+                // )
+                MyContainer(height: 100.sp,color: MyFoodAppColor.yellowColor,).allPadding(all: 10.sp),
+                MyContainer(height: 100.sp,color: MyFoodAppColor.yellowColor,).allPadding(all: 10.sp),
+                MyContainer(height: 100.sp,color: MyFoodAppColor.yellowColor,).allPadding(all: 10.sp),
+                MyContainer(height: 100.sp,color: MyFoodAppColor.yellowColor,).allPadding(all: 10.sp),
+                MyContainer(height: 100.sp,color: MyFoodAppColor.yellowColor,).allPadding(all: 10.sp),
               ],
             ),
-          ),
+          )
         ],
       ),
     );

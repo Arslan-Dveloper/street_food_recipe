@@ -6,6 +6,7 @@ import 'package:street_food_recipe/Extension/Padding_Extension.dart';
 import 'package:street_food_recipe/Helpers/constant.dart';
 import 'package:street_food_recipe/MyCustomWidget/CustomWidget.dart';
 import 'package:street_food_recipe/Views/Module_No_1/Screens/Complete_Detail_Screen.dart';
+import 'package:timelines/timelines.dart';
 
 class MyFavouriteRecipes extends StatelessWidget {
   @override
@@ -192,6 +193,26 @@ class MyFavouriteRecipes extends StatelessWidget {
                       ),
                     ],
                   ).onlyPadding(top: 8.sp),
+                  SizedBox(
+                    child: FixedTimeline.tileBuilder(
+                      builder: TimelineTileBuilder.connectedFromStyle(
+                        connectionDirection: ConnectionDirection.before,
+                        connectorStyleBuilder: (context, index) {
+                          return ConnectorStyle.solidLine;
+                        },
+                        indicatorStyleBuilder: (context, index) {
+                          return IndicatorStyle.dot;
+                        },
+                        itemCount: 5,
+                        itemExtent: 30.sp,
+                        contentsBuilder: (context, index) {
+                          return MyText(
+                            text: 'Arslan',
+                          );
+                        },
+                      ),
+                    ),
+                  ),
                   GestureDetector(
                     onTap: () {
                       Get.to(DetailedScreen());

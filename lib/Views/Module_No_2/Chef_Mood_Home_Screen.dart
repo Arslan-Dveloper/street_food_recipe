@@ -5,6 +5,8 @@ import 'package:street_food_recipe/Controller/Controller_Module_Two.dart';
 import 'package:street_food_recipe/Extension/Padding_Extension.dart';
 import 'package:street_food_recipe/Helpers/constant.dart';
 import 'package:street_food_recipe/MyCustomWidget/CustomWidget.dart';
+import 'package:street_food_recipe/Views/Module_No_2/Account_Status.dart';
+import 'package:street_food_recipe/Views/Module_No_2/Favourit_Recipes.dart';
 import 'package:street_food_recipe/Views/Module_No_2/Notification_Module_Two.dart';
 
 class ChefMoodHomeScreen extends StatelessWidget {
@@ -64,44 +66,54 @@ class ChefMoodHomeScreen extends StatelessWidget {
             Divider(
               color: MyFoodAppColor.forgeTextColor,
             ),
-            MyContainerShadow(
-              height: 40.sp,
-              width: 200.sp,
-              widget: Row(
-                children: [
-                  Image.asset('assets/images/icon.person.png')
-                      .onlyPadding(left: 5.sp),
-                  MyText(
-                    text: 'Account Status',
-                    fontSize: 14.sp,
-                  ).onlyPadding(left: 20.sp),
-                  Icon(
-                    Icons.arrow_forward_ios,
-                    color: MyFoodAppColor.yellowColor,
-                    size: 16.sp,
-                  ).onlyPadding(left: 25.sp)
-                ],
-              ),
-            ).onlyPadding(top: 20.sp, left: 10.sp),
-            MyContainerShadow(
-              height: 40.sp,
-              width: 200.sp,
-              widget: Row(
-                children: [
-                  Image.asset('assets/images/Icon.favourit.png')
-                      .onlyPadding(left: 5.sp),
-                  MyText(
-                    text: 'Favourite',
-                    fontSize: 14.sp,
-                  ).onlyPadding(left: 20.sp),
-                  Icon(
-                    Icons.arrow_forward_ios,
-                    color: MyFoodAppColor.yellowColor,
-                    size: 16.sp,
-                  ).onlyPadding(left: 65.sp)
-                ],
-              ),
-            ).onlyPadding(top: 10.sp, left: 10.sp),
+            GestureDetector(
+              onTap: () {
+                Get.to(AccountStatusScreen());
+              },
+              child: MyContainerShadow(
+                height: 40.sp,
+                width: 200.sp,
+                widget: Row(
+                  children: [
+                    Image.asset('assets/images/icon.person.png')
+                        .onlyPadding(left: 5.sp),
+                    MyText(
+                      text: 'Account Status',
+                      fontSize: 14.sp,
+                    ).onlyPadding(left: 20.sp),
+                    Icon(
+                      Icons.arrow_forward_ios,
+                      color: MyFoodAppColor.yellowColor,
+                      size: 16.sp,
+                    ).onlyPadding(left: 25.sp)
+                  ],
+                ),
+              ).onlyPadding(top: 20.sp, left: 10.sp),
+            ),
+            GestureDetector(
+              onTap: () {
+                Get.to(FavouriteRecipesModuleTwo());
+              },
+              child: MyContainerShadow(
+                height: 40.sp,
+                width: 200.sp,
+                widget: Row(
+                  children: [
+                    Image.asset('assets/images/Icon.favourit.png')
+                        .onlyPadding(left: 5.sp),
+                    MyText(
+                      text: 'Favourite',
+                      fontSize: 14.sp,
+                    ).onlyPadding(left: 20.sp),
+                    Icon(
+                      Icons.arrow_forward_ios,
+                      color: MyFoodAppColor.yellowColor,
+                      size: 16.sp,
+                    ).onlyPadding(left: 65.sp)
+                  ],
+                ),
+              ).onlyPadding(top: 10.sp, left: 10.sp),
+            ),
             MyContainerShadow(
               height: 40.sp,
               width: 200.sp,
@@ -167,7 +179,7 @@ class ChefMoodHomeScreen extends StatelessWidget {
                               .allPadding(all: 3.sp),
                     ),
                     GestureDetector(
-                      onTap: (){
+                      onTap: () {
                         Get.to(NotificationScreen());
                       },
                       child: Icon(

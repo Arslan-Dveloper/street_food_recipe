@@ -92,6 +92,12 @@ class ChefMoodScreen extends StatelessWidget {
                 containerShadowColor: Colors.transparent,
                 fillColor: MyFoodAppColor.textFieldFillColor,
                 hintFontSize: 13.sp,
+                icon: Icons.arrow_drop_down_outlined,
+                iconColor: MyFoodAppColor.yellowColor,
+                iconSize: 40.sp,
+                onIconTap: (){
+
+                },
               ).onlyPadding(top: 3.sp),
               MyText(
                 text: 'Experience',
