@@ -109,7 +109,7 @@ class OnBoardingScreen extends StatelessWidget {
                         ),
                       ),
                     ),
-                  ).onlyPadding(top: 25.sp),
+                  ).onlyPadding(top: 26.sp),
                 ],
               );
             },
