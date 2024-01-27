@@ -54,5 +54,6 @@ class MyFoodAppController extends GetxController {
 
   Rx<Color> whiteColor = MyFoodAppColor.whiteColor.obs;
   Rx<Color> yellowColor = MyFoodAppColor.yellowColor.obs;
-  Rx<bool> click = false.obs;
+  Rx<bool> clickOne = false.obs;
+  Rx<bool> clickTwo = false.obs;
 }

@@ -39,6 +39,7 @@ class HomeLayout extends StatelessWidget {
                 ).onlyPadding(left: 5.sp),
                 Obx(
                   () => Switch(
+                    inactiveThumbColor: MyFoodAppColor.yellowColor,
                     value: controller.isTrue.value,
                     onChanged: (value) {
                       controller.isTrue.value = !controller.isTrue.value;
@@ -121,98 +122,97 @@ class HomeLayout extends StatelessWidget {
         ),
       ),
       body: CustomScrollView(
-        physics: BouncingScrollPhysics(),
+        //physics: BouncingScrollPhysics(),
         slivers: [
           SliverAppBar(
             backgroundColor: MyFoodAppColor.appBarColor,
             expandedHeight: 200.sp,
             flexibleSpace: FlexibleSpaceBar(
                 background: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Row(
                   children: [
-                    Row(
-                      children: [
-                        Container(
-                          width: 80,
-                          height: 80,
-                          child: Image.asset('assets/images/Ellipse 2.png')
-                              .allPadding(all: 4.sp),
-                          decoration: BoxDecoration(
-                              border:
-                                  Border.all(color: MyFoodAppColor.greyColor),
-                              borderRadius: BorderRadius.circular(50.sp)),
-                        ),
-                        GestureDetector(
+                    Container(
+                      width: 80,
+                      height: 80,
+                      child: Image.asset('assets/images/Ellipse 2.png')
+                          .allPadding(all: 4.sp),
+                      decoration: BoxDecoration(
+                          border: Border.all(color: MyFoodAppColor.greyColor),
+                          borderRadius: BorderRadius.circular(50.sp)),
+                    ),
+                    GestureDetector(
+                      onTap: () {
+                        Get.to(NotificationScreen());
+                      },
+                      child: Icon(
+                        Icons.notifications_active,
+                        color: MyFoodAppColor.whiteColor,
+                        size: 25.sp,
+                      ).onlyPadding(left: 150.sp),
+                    ),
+                    Builder(
+                      builder: (context) {
+                        return GestureDetector(
                           onTap: () {
-                            Get.to(NotificationScreen());
+                            Scaffold.of(context).openDrawer();
                           },
                           child: Icon(
-                            Icons.notifications_active,
+                            Icons.menu,
                             color: MyFoodAppColor.whiteColor,
                             size: 25.sp,
-                          ).onlyPadding(left: 150.sp),
-                        ),
-                        Builder(
-                          builder: (context) {
-                            return GestureDetector(
-                              onTap: () {
-                                Scaffold.of(context).openDrawer();
-                              },
-                              child: Icon(
-                                Icons.menu,
-                                color: MyFoodAppColor.whiteColor,
-                                size: 25.sp,
-                              ).onlyPadding(left: 4.sp),
-                            );
-                          },
-                        )
-                      ],
-                    ),
+                          ).onlyPadding(left: 4.sp),
+                        );
+                      },
+                    )
+                  ],
+                ),
+                MyText(
+                  text: 'Hello, John',
+                  textColor: MyFoodAppColor.greyColor,
+                  fontSize: 12.sp,
+                ).onlyPadding(top: 15.sp),
+                MyText(
+                  text: 'Make your own food,',
+                  textColor: MyFoodAppColor.greyColor,
+                  fontSize: 15.sp,
+                  fontWeightText: FontWeight.w500,
+                ),
+                Row(
+                  children: [
                     MyText(
-                      text: 'Hello, John',
-                      textColor: MyFoodAppColor.greyColor,
-                      fontSize: 12.sp,
-                    ).onlyPadding(top: 15.sp),
-                    MyText(
-                      text: 'Make your own food,',
+                      text: 'stay at',
                       textColor: MyFoodAppColor.greyColor,
                       fontSize: 15.sp,
                       fontWeightText: FontWeight.w500,
                     ),
-                    Row(
-                      children: [
-                        MyText(
-                          text: 'stay at',
-                          textColor: MyFoodAppColor.greyColor,
-                          fontSize: 15.sp,
-                          fontWeightText: FontWeight.w500,
-                        ),
-                        MyText(
-                          text: ' Home,',
-                          textColor: MyFoodAppColor.yellowColor,
-                          fontSize: 15.sp,
-                          fontWeightText: FontWeight.w600,
-                        )
-                      ],
-                    ),
-                    GestureDetector(
-                      onTap: () {
-                        Get.to(SearchScreen());
-                      },
-                      child: MyContainer(
-                        width: 30.sp,
-                        height: 30.sp,
-                        color: MyFoodAppColor.yellowColor,
-                        borderRadius: BorderRadius.circular(7.sp),
-                        containerWidget: Icon(
-                          Icons.search_rounded,
-                          color: MyFoodAppColor.whiteColor,
-                          size: 22.sp,
-                        ),
-                      ).onlyPadding(left: 230.sp),
-                    ),
+                    MyText(
+                      text: ' Home,',
+                      textColor: MyFoodAppColor.yellowColor,
+                      fontSize: 15.sp,
+                      fontWeightText: FontWeight.w600,
+                    )
                   ],
-                ).onlyPadding(left: 20.sp, top: 20.sp).onlyPadding(top: 20.sp)),
+                ),
+                GestureDetector(
+                  onTap: () {
+                    Get.to(SearchScreen());
+                  },
+                  child: MyContainer(
+                    width: 30.sp,
+                    height: 30.sp,
+                    color: MyFoodAppColor.yellowColor,
+                    borderRadius: BorderRadius.circular(7.sp),
+                    containerWidget: Icon(
+                      Icons.search_rounded,
+                      color: MyFoodAppColor.whiteColor,
+                      size: 22.sp,
+                    ),
+                  ).onlyPadding(left: 230.sp),
+                ),
+              ],
+            ).onlyPadding(left: 20.sp, top: 20.sp).onlyPadding(top: 20.sp)),
           ),
           SliverToBoxAdapter(
             child: Column(
@@ -241,6 +241,8 @@ class HomeLayout extends StatelessWidget {
                   controller: controller.pageControllerOne,
                   count: 7,
                   effect: SlideEffect(
+                    dotWidth: 10.sp,
+                    dotHeight: 10.sp,
                     activeDotColor: MyFoodAppColor.yellowColor,
                   ),
                 ).onlyPadding(left: 90.sp, top: 10.sp),
@@ -254,20 +256,32 @@ class HomeLayout extends StatelessWidget {
                     Obx(
                       () => GestureDetector(
                         onTap: () {
-                          controller.click.value = !controller.click.value;
+                          controller.clickOne.value =
+                              !controller.clickOne.value;
                         },
                         child: Icon(
                           Icons.arrow_back_ios_sharp,
-                          color: controller.click.value
+                          color: controller.clickOne.value
                               ? MyFoodAppColor.yellowColor
                               : MyFoodAppColor.appBarColor,
                           size: 16.sp,
                         ).onlyPadding(left: 160.sp),
                       ),
                     ),
-                    Icon(
-                      Icons.arrow_forward_ios,
-                      size: 16.sp,
+                    Obx(
+                      () => GestureDetector(
+                        onTap: () {
+                          controller.clickTwo.value =
+                              !controller.clickTwo.value;
+                        },
+                        child: Icon(
+                          Icons.arrow_forward_ios,
+                          color: controller.clickTwo.value
+                              ? MyFoodAppColor.yellowColor
+                              : MyFoodAppColor.appBarColor,
+                          size: 16.sp,
+                        ),
+                      ),
                     ),
                   ],
                 ).onlyPadding(top: 5.sp),
@@ -293,24 +307,21 @@ class HomeLayout extends StatelessWidget {
                     },
                   ),
                 ).onlyPadding(top: 10.sp),
-                // GridView.builder(
-                //   shrinkWrap: true,
-                //   itemCount: 10,
-                //   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                //       crossAxisCount: 2),
-                //   itemBuilder: (context, index) {
-                //     return MyContainer(
-                //       height: 100,
-                //       width: 100,
-                //       containerWidget: Image.asset('assets/images/google.png'),
-                //     );
-                //   },
-                // )
-                MyContainer(height: 100.sp,color: MyFoodAppColor.yellowColor,).allPadding(all: 10.sp),
-                MyContainer(height: 100.sp,color: MyFoodAppColor.yellowColor,).allPadding(all: 10.sp),
-                MyContainer(height: 100.sp,color: MyFoodAppColor.yellowColor,).allPadding(all: 10.sp),
-                MyContainer(height: 100.sp,color: MyFoodAppColor.yellowColor,).allPadding(all: 10.sp),
-                MyContainer(height: 100.sp,color: MyFoodAppColor.yellowColor,).allPadding(all: 10.sp),
+                GridView.builder(
+                  shrinkWrap: true,
+                  physics: BouncingScrollPhysics(),
+                  itemCount: 10,
+                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 2),
+                  itemBuilder: (context, index) {
+                    return MyContainer(
+                      height: 100,
+                      width: 100,
+                      containerWidget: Image.asset('assets/images/Group 17.png')
+                          .onlyPadding(bottom: 5.sp),
+                    );
+                  },
+                )
               ],
             ),
           )
